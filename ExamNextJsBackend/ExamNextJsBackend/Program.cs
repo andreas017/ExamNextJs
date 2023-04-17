@@ -35,7 +35,7 @@ builder.Services.AddAuthorization(options => {
     options.AddPolicy("api", p =>
     {
         p.AddAuthenticationSchemes(OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme);
-        p.RequireClaim(Claims.Private.Scope, "api");
+        p.RequireClaim(Claims.Private.Scope, "api:webapp");
     });
 });
 

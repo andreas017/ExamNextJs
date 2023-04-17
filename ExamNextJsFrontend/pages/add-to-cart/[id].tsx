@@ -1,3 +1,4 @@
+import { Authorize } from '@/components/Authorize';
 import { WithDefaultLayout } from '@/components/DefautLayout';
 import { Title } from '@/components/Title';
 import { ExamNextJsClient, FoodItem, FoodItemDetailModel } from '@/functions/swagger/ExamNextJs';
@@ -19,35 +20,7 @@ const FoodItemBox: React.FC<{
 
     const [qty, setQty] = useState(1);
 
-    async function addToCart() {
-        const client = new ExamNextJsClient('http://localhost:5238/api/be', {
-            fetch(url, init) {
-                if (init && init.headers){
-                    init.headers['Authorization'] = `Bearer ${accessToken}`
-                }
-                return fetch(url, init);
-            }
-        });
-        try {
-            await client.addToCart({
-                productId: product.id,
-                qty: qty
-            });
-            notification.success({
-                type: 'success',
-                placement: 'bottomRight',
-                message: 'Added to cart',
-                description: `Added ${qty} ${product.name} to cart`
-            });
-        } catch (err) {
-            notification.error({
-                type: 'error',
-                placement: 'bottomRight',
-                message: 'Failed to add to cart',
-                description: String(err)
-            });
-        }
-    }
+    
 
     return (
         <div>
@@ -73,8 +46,7 @@ const FoodItemBox: React.FC<{
     );
 };
 
-const IndexPage: Page = () => {
-
+const InnerIndexPage: React.FC = () =>{
     const router = useRouter();
     const { id } = router.query;
     const restaurantDetailUri = id ? `/api/be/api/FoodItems/${id}` : undefined;
@@ -92,6 +64,15 @@ const IndexPage: Page = () => {
             </div>
         </div>
     );
+}
+
+const IndexPage: Page = () => {
+    return(
+        <Authorize>
+            <InnerIndexPage></InnerIndexPage>
+        </Authorize>
+    );
+    
 }
 
 IndexPage.layout = WithDefaultLayout;

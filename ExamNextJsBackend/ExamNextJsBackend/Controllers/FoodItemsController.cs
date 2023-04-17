@@ -8,11 +8,13 @@ using Microsoft.EntityFrameworkCore;
 using ExamNextJsBackend.Entities;
 using GripFoodBackEnd.Entities;
 using ExamNextJsBackend.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ExamNextJsBackend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize("api")]
     public class FoodItemsController : ControllerBase
     {
         private readonly ApplicationDbContext _context;

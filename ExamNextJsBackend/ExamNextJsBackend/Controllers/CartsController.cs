@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ExamNextJsBackend.Entities;
 using GripFoodBackEnd.Entities;
+using ExamNextJsBackend.Models;
+using Microsoft.AspNetCore.Authorization;
+using static OpenIddict.Abstractions.OpenIddictConstants;
 
 namespace ExamNextJsBackend.Controllers
 {
@@ -83,31 +86,29 @@ namespace ExamNextJsBackend.Controllers
 
         // POST: api/Carts
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<Cart>> PostCart(Cart cart)
+        [HttpPost(Name = "AddToCart")]
+        [Authorize("api")]
+        public async Task<ActionResult<bool>> PostCart(AddToCartModel cart)
         {
-          if (_context.Carts == null)
-          {
-              return Problem("Entity set 'ApplicationDbContext.Carts'  is null.");
-          }
-            _context.Carts.Add(cart);
-            try
+            if (_context.Carts == null)
             {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (CartExists(cart.Id))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
+                return Problem("Entity set 'ApplicationDbContext.Carts'  is null.");
             }
 
-            return CreatedAtAction("GetCart", new { id = cart.Id }, cart);
+            var userId = User.FindFirst(Claims.Subject)?.Value ?? throw new InvalidOperationException("User ID not found");
+            var cartId = Ulid.NewUlid().ToString();
+
+            _context.Carts.Add(new Cart
+                {
+                    Id = cartId,
+                    UserId = userId,
+                    CreatedAt = DateTimeOffset.UtcNow,
+                    RestaurantId = cart.RestaurantId,                
+                });
+            
+
+            await _context.SaveChangesAsync();
+            return true;
         }
 
         // DELETE: api/Carts/5
