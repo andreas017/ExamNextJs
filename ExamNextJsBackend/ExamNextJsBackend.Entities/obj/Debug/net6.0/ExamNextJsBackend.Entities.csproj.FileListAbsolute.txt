@@ -1,0 +1,14 @@
+C:\Users\andsk\Desktop\INTERN\Training\Exam3_NextJs\ExamNextJsBackend\ExamNextJsBackend.Entities\bin\Debug\net6.0\ExamNextJsBackend.Entities.deps.json
+C:\Users\andsk\Desktop\INTERN\Training\Exam3_NextJs\ExamNextJsBackend\ExamNextJsBackend.Entities\bin\Debug\net6.0\ExamNextJsBackend.Entities.runtimeconfig.json
+C:\Users\andsk\Desktop\INTERN\Training\Exam3_NextJs\ExamNextJsBackend\ExamNextJsBackend.Entities\bin\Debug\net6.0\ExamNextJsBackend.Entities.dll
+C:\Users\andsk\Desktop\INTERN\Training\Exam3_NextJs\ExamNextJsBackend\ExamNextJsBackend.Entities\bin\Debug\net6.0\ExamNextJsBackend.Entities.pdb
+C:\Users\andsk\Desktop\INTERN\Training\Exam3_NextJs\ExamNextJsBackend\ExamNextJsBackend.Entities\obj\Debug\net6.0\ExamNextJsBackend.Entities.csproj.AssemblyReference.cache
+C:\Users\andsk\Desktop\INTERN\Training\Exam3_NextJs\ExamNextJsBackend\ExamNextJsBackend.Entities\obj\Debug\net6.0\ExamNextJsBackend.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\andsk\Desktop\INTERN\Training\Exam3_NextJs\ExamNextJsBackend\ExamNextJsBackend.Entities\obj\Debug\net6.0\ExamNextJsBackend.Entities.AssemblyInfoInputs.cache
+C:\Users\andsk\Desktop\INTERN\Training\Exam3_NextJs\ExamNextJsBackend\ExamNextJsBackend.Entities\obj\Debug\net6.0\ExamNextJsBackend.Entities.AssemblyInfo.cs
+C:\Users\andsk\Desktop\INTERN\Training\Exam3_NextJs\ExamNextJsBackend\ExamNextJsBackend.Entities\obj\Debug\net6.0\ExamNextJsBackend.Entities.csproj.CoreCompileInputs.cache
+C:\Users\andsk\Desktop\INTERN\Training\Exam3_NextJs\ExamNextJsBackend\ExamNextJsBackend.Entities\obj\Debug\net6.0\ExamNextJsBackend.Entities.dll
+C:\Users\andsk\Desktop\INTERN\Training\Exam3_NextJs\ExamNextJsBackend\ExamNextJsBackend.Entities\obj\Debug\net6.0\refint\ExamNextJsBackend.Entities.dll
+C:\Users\andsk\Desktop\INTERN\Training\Exam3_NextJs\ExamNextJsBackend\ExamNextJsBackend.Entities\obj\Debug\net6.0\ExamNextJsBackend.Entities.pdb
+C:\Users\andsk\Desktop\INTERN\Training\Exam3_NextJs\ExamNextJsBackend\ExamNextJsBackend.Entities\obj\Debug\net6.0\ExamNextJsBackend.Entities.genruntimeconfig.cache
+C:\Users\andsk\Desktop\INTERN\Training\Exam3_NextJs\ExamNextJsBackend\ExamNextJsBackend.Entities\obj\Debug\net6.0\ref\ExamNextJsBackend.Entities.dll
